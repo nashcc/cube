@@ -41,12 +41,23 @@ for (var e = 0; e < edges.length; e++) {
   var node0 = nodes[n0];
   var node1 = nodes[n1];
 
+/*
   //the next two lines draw the cube face on
-  //ctx.moveTo(node0[0], node0[1]);
-  //ctx.lineTo(node1[0], node1[1]);
+  ctx.moveTo(node0[0], node0[1]);
+  ctx.lineTo(node1[0], node1[1]);
+  ctx.stroke();
+  //the next three lines draw the vertices for the face on
+  ctx.beginPath();
+  ctx.arc(node0[0], node0[1], 5, 0, 2 * Math.PI, true);
+  ctx.fill();
 
-  //the next two lines draw the cube at an angle so you can see 3D shape
+*/
+  //the next three lines draw the cube at an angle so you can see 3D shape
   ctx.moveTo(node0[0]+node0[2]/2, node0[1]+node0[2]/2);
   ctx.lineTo(node1[0]+node1[2]/2, node1[1]+node1[2]/2);
   ctx.stroke();
+  //the next three lines draw the vertices for the angled cube
+  ctx.beginPath();
+  ctx.arc(node0[0]+node0[2]/2, node0[1]+node0[2]/2, 5, 0, 2 * Math.PI, true);
+  ctx.fill();
 }
