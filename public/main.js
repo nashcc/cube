@@ -34,6 +34,20 @@ var ctx = c.getContext('2d');
 //move canvas (0,0) point to center of cube
 ctx.translate(200, 200);
 
+var cubeRotate = function(theta){
+  var sinTheta = Math.sin(theta);
+  var cosTheta = Math.cos(theta);
+
+  for(var n=0; n<nodes.length; n++){
+    var node = nodes[n];
+    var x = node[0];
+    var y = node[1];
+    node[0] = x*cosTheta - y*sinTheta;
+    node[1] = y*cosTheta + x*sinTheta;
+  }
+};
+
+cubeRotate(90);
 
 var draw = function(){
   //draw the cube
